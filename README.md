@@ -87,26 +87,25 @@ Source Systems
 ### Setup Steps
 
 1. **Create Database Structure**
-```sql
+```
 -- Run ddl.sql to create bronze schema and tables
 -- This will drop existing tables if they exist
 ```
 
 2. **Create Stored Procedure**
-```sql
+```
 -- Run proc_load.sql to create the load procedure
 ```
 
 3. **Update File Paths**
-```sql
+```
 -- Modify CSV file paths in proc_load.sql to match your environment
--- Default path: C:\Users\ishvi\OneDrive\Desktop\Code\Projects\Data Warehouse Bronze Layer\datasets\
 ```
 
 ## Usage
 
 ### Execute Bronze Layer Load
-```sql
+```
 EXEC bronze.load_bronze
 ```
 
@@ -172,7 +171,7 @@ project/
 - Sequential table loading (not parallel)
 
 ### Error Handling
-```sql
+```
 BEGIN TRY
     -- Load operations
 END TRY
@@ -205,11 +204,9 @@ The bronze layer maintains raw data fidelity, enabling:
 ## Contributing
 This is a personal/portfolio project demonstrating ETL and data warehousing concepts.
 
-## License
-[Specify your license]
 
 ## Author
-[Your name]
+Ishvir Chopra
 
 ## Acknowledgments
 - Medallion architecture pattern (Databricks)
