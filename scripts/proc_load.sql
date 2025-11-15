@@ -37,7 +37,7 @@ BEGIN
 		TRUNCATE TABLE bronze.crm_cust_info;
 		PRINT '>> Inserting Data Into: bronze.crm_cust_info';
 		BULK INSERT bronze.crm_cust_info
-		FROM 'C:\Users\ishvi\OneDrive\Desktop\Code\Projects\Data Warehouse Bronze Layer\datasets\source_crm\cust_info.csv'
+		FROM 'INSERT_FILE_PATH'
 		WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
@@ -52,8 +52,8 @@ BEGIN
 		TRUNCATE TABLE bronze.crm_prd_info;
 		PRINT '>> Inserting Data Into: bronze.crm_prd_info';
 		BULK INSERT bronze.crm_prd_info
-		FROM 'C:\Users\ishvi\OneDrive\Desktop\Code\Projects\Data Warehouse Bronze Layer\datasets\source_crm\prd_info.csv'
-		WITH (
+		FROM 'INSERT_FILE_PATH'
+			WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
 			TABLOCK
@@ -67,8 +67,8 @@ BEGIN
 		TRUNCATE TABLE bronze.crm_sales_details;
 		PRINT '>> Inserting Data Into: bronze.crm_sales_details';
 		BULK INSERT bronze.crm_sales_details
-		FROM 'C:\Users\ishvi\OneDrive\Desktop\Code\Projects\Data Warehouse Bronze Layer\datasets\source_crm\sales_details.csv'
-		WITH (
+		FROM 'INSERT_FILE_PATH'		
+			WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
 			TABLOCK
@@ -86,8 +86,8 @@ BEGIN
 		TRUNCATE TABLE bronze.erp_cust_az12;
 		PRINT '>> Inserting Data Into: bronze.erp_cust_az12';
 		BULK INSERT bronze.erp_cust_az12
-		FROM 'C:\Users\ishvi\OneDrive\Desktop\Code\Projects\Data Warehouse Bronze Layer\datasets\source_erp\cust_az12.csv'
-		WITH (
+		FROM 'INSERT_FILE_PATH'		
+			WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
 			TABLOCK
@@ -101,8 +101,8 @@ BEGIN
 		TRUNCATE TABLE bronze.erp_loc_a101;
 		PRINT '>> Inserting Data Into: bronze.erp_loc_a101';
 		BULK INSERT bronze.erp_loc_a101
-		FROM 'C:\Users\ishvi\OneDrive\Desktop\Code\Projects\Data Warehouse Bronze Layer\datasets\source_erp\loc_a101.csv'
-		WITH (
+		FROM 'INSERT_FILE_PATH'		
+			WITH (
 			FIRSTROW = 2,
 			FIELDTERMINATOR = ',',
 			TABLOCK
@@ -139,4 +139,5 @@ BEGIN
 		PRINT 'Error Number' + CAST (ERROR_NUMBER() AS NVARCHAR);
 		PRINT '=========================================';
 	END CATCH
+
 END
